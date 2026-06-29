@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhishGuard — Phishing Email Detector</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">⬡</span>
+      <span class="brand-text">PhishGuard</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="analyzer.html">Analyzer</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#about">About</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="scan-ring ring-1"></div>
+    <div class="scan-ring ring-2"></div>
+    <div class="scan-ring ring-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">CYBERSECURITY TOOL</div>
+      <h1 class="hero-title">
+        Detect Phishing<br/>
+        <span class="accent-text">Before It Strikes</span>
+      </h1>
+      <p class="hero-subtitle">
+        AI-powered analysis that inspects email content, headers, and links
+        to identify phishing attempts in real time.
+      </p>
+      <div class="hero-cta">
+        <a href="analyzer.html" class="btn-primary">Analyze an Email →</a>
+        <a href="#how-it-works" class="btn-ghost">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Detection Signals</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">ML</span><span class="stat-label">Powered Engine</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free to Use</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// process</span>
+        <h2 class="section-title">How It Works</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-icon">📋</div>
+          <h3>Paste Email Content</h3>
+          <p>Copy and paste the full email — subject, body, and any links — into our analyzer.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-icon">🔍</div>
+          <h3>Multi-Signal Analysis</h3>
+          <p>Our engine checks 15+ indicators including suspicious URLs, urgency language, spoofed domains, and more.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-icon">🛡️</div>
+          <h3>Instant Risk Report</h3>
+          <p>Get a detailed breakdown of detected threats with a risk score and actionable guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section section-dark" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// capabilities</span>
+        <h2 class="section-title">Detection Capabilities</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <h4>Suspicious URL Detection</h4>
+          <p>Identifies obfuscated, shortened, or deceptive URLs embedded in email content.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚠️</div>
+          <h4>Urgency Language Analysis</h4>
+          <p>Flags manipulative phrases like "act now", "verify immediately", or "account suspended".</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧩</div>
+          <h4>Domain Spoofing Check</h4>
+          <p>Detects lookalike domains and homograph attacks designed to impersonate real brands.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📎</div>
+          <h4>Attachment Risk Signals</h4>
+          <p>Recognizes references to dangerous attachment types commonly used in malware delivery.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏦</div>
+          <h4>Brand Impersonation</h4>
+          <p>Cross-checks for unauthorized use of brand names from banks, tech companies, and government agencies.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h4>Credential Harvesting Signals</h4>
+          <p>Detects prompts asking for passwords, PINs, SSNs, or other sensitive credentials.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container about-container">
+      <div class="about-text">
+        <span class="section-tag">// about</span>
+        <h2 class="section-title">Built for Awareness</h2>
+        <p>PhishGuard was built as part of a Cybersecurity Summer Internship project to raise awareness about email phishing — one of the most common attack vectors in modern cybercrime.</p>
+        <p>Phishing attacks account for over <strong>36% of data breaches</strong> globally. This tool empowers users to verify suspicious emails before clicking links or sharing sensitive information.</p>
+        <a href="analyzer.html" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Try the Analyzer</a>
+      </div>
+      <div class="about-card">
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">phishguard_scan.py</span>
+          </div>
+          <div class="terminal-body">
+            <div class="t-line"><span class="t-comment"># Analyzing email...</span></div>
+            <div class="t-line"><span class="t-key">subject</span> <span class="t-op">=</span> <span class="t-str">"Your account is suspended!"</span></div>
+            <div class="t-line t-gap"><span class="t-comment"># Running checks...</span></div>
+            <div class="t-line"><span class="t-key">urgency_score</span>  <span class="t-op">→</span> <span class="t-red">HIGH</span></div>
+            <div class="t-line"><span class="t-key">suspicious_url</span> <span class="t-op">→</span> <span class="t-red">DETECTED</span></div>
+            <div class="t-line"><span class="t-key">brand_spoof</span>   <span class="t-op">→</span> <span class="t-red">DETECTED</span></div>
+            <div class="t-line t-gap"></div>
+            <div class="t-line"><span class="t-result-label">VERDICT:</span> <span class="t-result">⚠ PHISHING</span></div>
+            <div class="t-line"><span class="t-result-label">RISK SCORE:</span> <span class="t-result">91 / 100</span></div>
+            <div class="t-cursor">█</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon">⬡</span> PhishGuard
+      </div>
+      <p class="footer-note">Built for educational purposes · Cybersecurity Internship Project 2025</p>
+      <a href="analyzer.html" class="btn-primary btn-sm">Open Analyzer</a>
+    </div>
+  </footer>
+
+  <script src="../static/js/app.js"></script>
+</body>
+</html>

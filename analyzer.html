@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Analyzer — PhishGuard</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="analyzer-page">
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:.5rem;">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-text">PhishGuard</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="analyzer.html" class="active">Analyzer</a>
+    </div>
+  </nav>
+
+  <div class="analyzer-layout">
+
+    <!-- INPUT PANEL -->
+    <div class="input-panel">
+      <div class="panel-header">
+        <h2 class="panel-title"><span class="accent-text">01</span> Enter Email Details</h2>
+        <p class="panel-sub">Fill in the email fields to scan for phishing indicators.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Sender Email Address</label>
+        <input type="text" id="senderEmail" class="form-input" placeholder="e.g. support@paypa1.com" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email Subject</label>
+        <input type="text" id="emailSubject" class="form-input" placeholder="e.g. URGENT: Verify your account now!" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email Body</label>
+        <textarea id="emailBody" class="form-textarea" rows="10" placeholder="Paste the full email body here, including any URLs or links..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Sender's Display Name <span class="optional">(optional)</span></label>
+        <input type="text" id="senderName" class="form-input" placeholder="e.g. PayPal Security Team" />
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-primary btn-full" id="analyzeBtn" onclick="analyzeEmail()">
+          <span id="btnText">🔍 Analyze Email</span>
+          <span id="btnLoader" style="display:none">Scanning...</span>
+        </button>
+        <button class="btn-ghost btn-full" onclick="clearForm()">Clear Form</button>
+      </div>
+
+      <!-- SAMPLE BUTTONS -->
+      <div class="sample-section">
+        <p class="sample-label">Try a sample:</p>
+        <div class="sample-btns">
+          <button class="sample-btn" onclick="loadSample('phishing')">⚠ Phishing Sample</button>
+          <button class="sample-btn" onclick="loadSample('legit')">✓ Legit Sample</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULT PANEL -->
+    <div class="result-panel" id="resultPanel">
+
+      <!-- PLACEHOLDER STATE -->
+      <div class="result-placeholder" id="placeholderState">
+        <div class="placeholder-icon">🛡️</div>
+        <p class="placeholder-text">Analysis results will appear here after you scan an email.</p>
+        <p class="placeholder-sub">No email data is stored or transmitted externally.</p>
+      </div>
+
+      <!-- SCANNING STATE -->
+      <div class="scanning-state" id="scanningState" style="display:none">
+        <div class="scan-animation">
+          <div class="scan-shield">⬡</div>
+          <div class="scan-bar"></div>
+        </div>
+        <p class="scanning-text">Running <span id="scanStep">security checks</span>...</p>
+        <div class="scan-log" id="scanLog"></div>
+      </div>
+
+      <!-- RESULTS STATE -->
+      <div class="results-state" id="resultsState" style="display:none">
+
+        <!-- VERDICT BANNER -->
+        <div class="verdict-banner" id="verdictBanner">
+          <div class="verdict-icon" id="verdictIcon"></div>
+          <div class="verdict-text">
+            <div class="verdict-label" id="verdictLabel"></div>
+            <div class="verdict-sub" id="verdictSub"></div>
+          </div>
+          <div class="risk-score-circle">
+            <svg viewBox="0 0 80 80" class="score-svg">
+              <circle cx="40" cy="40" r="34" class="score-track"/>
+              <circle cx="40" cy="40" r="34" class="score-fill" id="scoreArc"/>
+            </svg>
+            <div class="score-num" id="scoreNum">0</div>
+            <div class="score-unit">/ 100</div>
+          </div>
+        </div>
+
+        <!-- INDICATORS -->
+        <div class="indicators-section">
+          <h3 class="indicators-title">Detection Breakdown</h3>
+          <div class="indicators-list" id="indicatorsList"></div>
+        </div>
+
+        <!-- RECOMMENDATIONS -->
+        <div class="reco-section" id="recoSection">
+          <h3 class="reco-title">Recommendations</h3>
+          <div class="reco-list" id="recoList"></div>
+        </div>
+
+        <!-- SCAN AGAIN -->
+        <button class="btn-ghost btn-full" onclick="resetResults()" style="margin-top:1.5rem">← Scan Another Email</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer footer-mini">
+    <div class="container footer-inner">
+      <span class="footer-brand"><span class="brand-icon">⬡</span> PhishGuard</span>
+      <span class="footer-note">Cybersecurity Internship Project 2025</span>
+    </div>
+  </footer>
+
+  <script src="../static/js/app.js"></script>
+</body>
+</html>
